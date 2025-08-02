@@ -1,37 +1,52 @@
 {
-    "name": "hotpayments/php",
+    "name": "hotpayments/php-sdk",
     "type": "library",
-    "description": "PHP ",
+    "description": "Modern PHP SDK for HotPayments API - Handle payments, subscriptions, PIX transactions with a fluent, easy-to-use interface",
     "keywords": [
+        "hotpayments",
+        "payments",
+        "pix",
+        "subscription",
+        "billing",
         "api",
         "sdk",
         "php",
-        "hotpayments"
+        "laravel"
+    ],
+    "homepage": "https://github.com/hotpayments/php-sdk",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andre Felipe",
+            "email": "contato@hotpayments.net",
+            "role": "Developer"
+        }
     ],
     "require": {
         "php": "^8.1",
         "ext-curl": "*",
-        "guzzlehttp/guzzle": "^7.0",
-        "ext-fileinfo": "*"
+        "ext-fileinfo": "*",
+        "guzzlehttp/guzzle": "^7.0"
     },
-    "license": "MIT",
+    "require-dev": {
+      "laravel/pint": "^1.20"
+    },
     "autoload": {
         "psr-4": {
             "HotPayments\\": "src/"
         }
     },
-    "authors": [
-        {
-            "name": "andrefelipe18",
-            "email": "dominguesstroppa@gmail.com"
-        }
-    ],
     "config": {
+        "sort-packages": true,
         "allow-plugins": {
             "pestphp/pest-plugin": true
         }
     },
-    "require-dev": {
-        "laravel/pint": "^1.20"
-    }
+    "support": {
+        "issues": "https://github.com/hotpayments/php-sdk/issues",
+        "source": "https://github.com/hotpayments/php-sdk",
+        "docs": "https://github.com/hotpayments/php-sdk#readme"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
 }
