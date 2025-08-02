@@ -1,0 +1,52 @@
+# Composer Related
+composer.lock
+/vendor
+
+# Frontend Assets
+/node_modules
+
+# Logs
+npm-debug.log
+yarn-error.log
+
+# Caches
+.phpunit.cache
+.phpunit.result.cache
+/build
+
+# IDE Helper
+_ide_helper.php
+_ide_helper_models.php
+.phpstorm.meta.php
+
+# Editors
+/.idea
+/.fleet
+/.vscode
+
+# Misc
+phpunit.xml
+phpstan.neon
+testbench.yaml
+/coverage
+/docs/node_modules
+/docs/.vitepress/dist
+/docs/.vitepress/cache
+/docs/modules
+/docs/.env
+/docs/.vitepress/cache/deps
+/notes
+.output.txt
+/tests/cache
+tests/Workbench/bootstrap/cache/
+tests/Workbench/storage/framework/cache/*
+tests/Workbench/storage/framework/sessions/*
+tests/Workbench/storage/framework/views/*
+tests/Workbench/storage/framework/testing/*
+tests/Workbench/storage/logs/*
+
+!tests/Workbench/storage/framework/cache/.gitkeep
+!tests/Workbench/storage/framework/sessions/.gitkeep
+!tests/Workbench/storage/framework/views/.gitkeep
+!tests/Workbench/storage/framework/testing/.gitkeep
+!tests/Workbench/storage/logs/.gitkeep

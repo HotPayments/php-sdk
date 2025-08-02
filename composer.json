@@ -1,0 +1,37 @@
+{
+    "name": "hotpayments/php",
+    "type": "library",
+    "description": "PHP ",
+    "keywords": [
+        "api",
+        "sdk",
+        "php",
+        "hotpayments"
+    ],
+    "require": {
+        "php": "^8.1",
+        "ext-curl": "*",
+        "guzzlehttp/guzzle": "^7.0",
+        "ext-fileinfo": "*"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "HotPayments\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "andrefelipe18",
+            "email": "dominguesstroppa@gmail.com"
+        }
+    ],
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "require-dev": {
+        "laravel/pint": "^1.20"
+    }
+}
