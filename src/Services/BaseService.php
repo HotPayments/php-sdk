@@ -2,12 +2,9 @@
 
 namespace HotPayments\Services;
 
-use GuzzleHttp\Exception\ClientException;
-use GuzzleHttp\Exception\RequestException;
+use GuzzleHttp\Exception\{ClientException, RequestException};
+use HotPayments\Exceptions\{AuthorizationException, HotpaymentsException, ValidationException};
 use HotPayments\Hotpayments;
-use HotPayments\Exceptions\HotpaymentsException;
-use HotPayments\Exceptions\ValidationException;
-use HotPayments\Exceptions\AuthorizationException;
 
 abstract class BaseService
 {
@@ -22,7 +19,7 @@ abstract class BaseService
     {
         try {
             $options = [];
-            
+
             if (!empty($data)) {
                 if ($method === 'GET') {
                     $options['query'] = $data;
@@ -32,7 +29,7 @@ abstract class BaseService
             }
 
             $response = $this->hotpayments->getClient()->request($method, $endpoint, $options);
-            
+
             return json_decode($response->getBody()->getContents(), true);
         } catch (ClientException $e) {
             $this->handleClientException($e);
@@ -47,14 +44,15 @@ abstract class BaseService
 
     private function handleClientException(ClientException $e): void
     {
-        $statusCode = $e->getResponse()->getStatusCode();
+        $statusCode   = $e->getResponse()->getStatusCode();
         $responseBody = json_decode($e->getResponse()->getBody()->getContents(), true);
-        
+
         $message = $responseBody['message'] ?? 'Unknown error';
 
         switch ($statusCode) {
             case 422:
                 $errors = $responseBody['errors'] ?? [];
+
                 throw new ValidationException($message, $errors);
             case 403:
                 throw new AuthorizationException($message);
